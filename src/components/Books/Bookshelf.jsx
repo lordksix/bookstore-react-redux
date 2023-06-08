@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import styles from 'styles/Bookshelf.module.css';
 import BookItem from './BookItem';
 
 const bookAr = [
@@ -41,7 +42,7 @@ const Bookshelf = () => {
   ));
 
   return (
-    <div className="bookshelf">
+    <div className={styles.bookshelf}>
       {books}
     </div>
   );
