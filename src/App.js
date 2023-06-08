@@ -7,7 +7,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />}/>
-          <Route ath="categories" element={<Categories />}/>
+          <Route path="categories" element={<Categories />}/>
+          <Route path="*" element={<NotMatch />} />
         </Route>
       </Routes>
     </div>
