@@ -38,7 +38,7 @@ const BookItem = (props) => {
   );
 };
 
-BookItem.protoTypes = {
+BookItem.propTypes = {
   category: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
