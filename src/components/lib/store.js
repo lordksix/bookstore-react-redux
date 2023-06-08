@@ -3,27 +3,27 @@ import { persist } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
 
 const bookLocalStore = (set) => ({
-  todos: [],
+  books: [],
   addBookItem: (title, category) => {
-    const newTodo = {
+    const newBook = {
       id: uuidv4(),
       title,
       category,
     };
     set((state) => ({
-      todos: [...state.todos, newTodo],
+      todos: [...state.books, newBook],
     }));
   },
   delTodo: (id) => {
     set((state) => ({
-      todos: state.todos.filter((todo) => {
-        return todo.id !== id;
-      }),
+      books: state.books.filter((book) => book.id !== id),
     }));
   },
 });
-export const useBookLocalStore = create(
+const useBookLocalStore = create(
   persist(bookLocalStore, {
     name: 'books',
-  })
+  }),
 );
+
+export default useBookLocalStore;

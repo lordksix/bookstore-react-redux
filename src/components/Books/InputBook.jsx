@@ -1,11 +1,12 @@
-import { useBookLocalStore } from "components/lib/store";
+import { useState } from 'react';
+import useBookLocalStore from 'components/lib/store';
 
 const InputBook = () => {
-  const addBookItem = useBookLocalStore((state) => state.addBookItem)
+  const addBookItem = useBookLocalStore((state) => state.addBookItem);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [message, setMessage] = useState('');
-  
+
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -14,7 +15,7 @@ const InputBook = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(title.trim() && category.trim()){
+    if (title.trim() && category.trim()) {
       addBookItem(title, category);
       setTitle('');
       setCategory('');
@@ -26,24 +27,27 @@ const InputBook = () => {
 
   return (
     <>
-    <h3>Add New Book</h3>
-    <form onSubmit={handleSubmit} className="bookForm">
-      <input
-        type="text"
-        placeholder="Book Title"
-        value={title}
-        onChange={handleChangeTitle}
-        className="bookFormInput"
-      />
-      <input
-        type="text"
-        placeholder="Book Category"
-        value={category}
-        onChange={handleChangeCategory}
-        className="bookFormInput"
-      />
-    </form>
-    <span className="formWarning">{message}</span>
+      <h3>Add New Book</h3>
+      <form onSubmit={handleSubmit} className="bookForm">
+        <input
+          type="text"
+          placeholder="Book Title"
+          value={title}
+          onChange={handleChangeTitle}
+          className="bookFormInput"
+        />
+        <input
+          type="text"
+          placeholder="Book Category"
+          value={category}
+          onChange={handleChangeCategory}
+          className="bookFormInput"
+        />
+        <button type="submit" className="formBtn">
+          Add Book
+        </button>
+      </form>
+      <span className="formWarning">{message}</span>
     </>
 
   );
