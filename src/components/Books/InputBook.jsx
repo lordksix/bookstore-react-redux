@@ -1,4 +1,7 @@
+import { useBookLocalStore } from "components/lib/store";
+
 const InputBook = () => {
+  const addBookItem = useBookLocalStore((state) => state.addBookItem)
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [message, setMessage] = useState('');
@@ -12,6 +15,7 @@ const InputBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(title.trim() && category.trim()){
+      addBookItem(title, category);
       setTitle('');
       setCategory('');
       setMessage('');
