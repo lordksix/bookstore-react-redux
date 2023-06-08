@@ -1,7 +1,7 @@
 import Books from 'components/Books/Books';
 
 const Home = () => (
-  <div className="home">
+  <div className="appBody">
     <Books />
   </div>
 );

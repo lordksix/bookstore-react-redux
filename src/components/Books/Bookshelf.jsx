@@ -41,9 +41,9 @@ const Bookshelf = () => {
   ));
 
   return (
-    <>
+    <div className="bookshelf">
       {books}
-    </>
+    </div>
   );
 };
 

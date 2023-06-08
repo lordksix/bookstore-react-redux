@@ -1,39 +1,85 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.4;
+  color: #000;
+  background-color: floralwhite;
+  height: 100vh;
+  font-weight: 400;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+ul,
+li {
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.App {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  width: 90vw;
+  min-height: 90vh;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+}
 
-  to {
-    transform: rotate(360deg);
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.appHeader {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 20px;
+  width: 90vw;
+  padding: 2%;
+  background-color: white;
+}
+
+.top {
+  align-self: flex-start;
+}
+
+.active {
+  color: red;
+}
+
+.appBody {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.bookItem {
+  width: 90%;
+}
+
+@media only  screen and (min-width: 420px) {
+  .appHeader {
+    flex-flow: row;
+    justify-content: flex-start;
   }
 }

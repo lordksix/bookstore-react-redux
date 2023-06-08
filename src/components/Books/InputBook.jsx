@@ -26,7 +26,7 @@ const InputBook = () => {
   };
 
   return (
-    <>
+    <div className="bookInput">
       <h3>Add New Book</h3>
       <form onSubmit={handleSubmit} className="bookForm">
         <input
@@ -48,8 +48,7 @@ const InputBook = () => {
         </button>
       </form>
       <span className="formWarning">{message}</span>
-    </>
-
+    </div>
   );
 };
 

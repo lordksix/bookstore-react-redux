@@ -10,7 +10,7 @@ const BookItem = (props) => {
     totalChap,
   } = props;
 
-  const bookProgress = `You have read ${(finishedChap / totalChap) * 100} %`;
+  const bookProgress = `You have read ${Math.round((finishedChap / totalChap) * 100)} %`;
   const currentChap = `${finishedChap < totalChap ? finishedChap : 'Finished'} `;
   return (
     <div className="bookItem">
