@@ -56,6 +56,9 @@
 ### Key Features <a name="key-features"></a>
 
 - **Setup React App**
+- **Implement basic styling**
+- **Implemente 2 SPA using React router**
+- **implement zustand**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
