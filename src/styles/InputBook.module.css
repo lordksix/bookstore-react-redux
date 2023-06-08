@@ -1,20 +1,23 @@
 .bookInput {
-  padding: 20px 30px 10px 30px;
   display: flex;
   flex-flow: column;
   gap: 10px;
   border-top: solid 1px gray;
+  padding: 3vh 0 0 5vw;
+  width: 80vw;
+  max-width: 600px;
 }
 
 .bookForm {
-  display: grid;
-  grid-template-columns: 3fr 1fr auto;
-  column-gap: 10px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
 }
 
 .bookFormInput {
   padding: 6px 15px;
   border-radius: 10px;
+  max-width: 300px;
 }
 
 .formBtn {
@@ -22,9 +25,20 @@
   color: white;
   background-color: dodgerblue;
   border-radius: 10px;
+  cursor: pointer;
+  max-width: 150px;
 }
 
 .formWarning {
   color: red;
   font-weight: bolder;
+}
+
+@media only  screen and (min-width: 600px) {
+  .bookForm {
+    display: grid;
+    grid-template-columns: 3fr 1fr auto;
+    column-gap: 10px;
+    justify-content: space-around;
+  }
 }

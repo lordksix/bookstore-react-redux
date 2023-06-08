@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
+import styles from 'styles/BookItem.module.css';
 
 const BookItem = (props) => {
   const {
@@ -10,29 +11,36 @@ const BookItem = (props) => {
     totalChap,
   } = props;
 
-  const bookProgress = `You have read ${Math.round((finishedChap / totalChap) * 100)} %`;
+  const bookProgress = `${Math.round((finishedChap / totalChap) * 100)}%`;
   const currentChap = `${finishedChap < totalChap ? finishedChap : 'Finished'} `;
   return (
-    <div className="bookItem">
-      <div className="left section">
-        <span className="bookCat">{category}</span>
-        <span className="bookTitle">{name}</span>
-        <span className="bookAuthor">{author}</span>
-        <nav className="bookInter">
+    <div className={styles.bookItem}>
+      <div className={styles.left}>
+        <div className={styles.bookCaract}>
+          <span className={styles.bookCategory}>{category}</span>
+          <div className="bookInfo">
+            <h3 className={styles.bookTitle}>{name}</h3>
+            <span className={styles.bookAuthor}>{author}</span>
+          </div>
+        </div>
+        <nav className={styles.bookInter}>
           <ul>
-            <li key={uuidv4()}>Commets |</li>
-            <li key={uuidv4()}>Remove |</li>
-            <li key={uuidv4()}>Edit |</li>
+            <li key={uuidv4()} className={styles.navItem}>Comments</li>
+            <li key={uuidv4()} className={styles.separator}>|</li>
+            <li key={uuidv4()} className={styles.navItem}>Remove</li>
+            <li key={uuidv4()} className={styles.separator}>|</li>
+            <li key={uuidv4()} className={styles.navItem}>Edit</li>
           </ul>
         </nav>
       </div>
-      <div className="middle section">
-        <p>{bookProgress}</p>
+      <div className={styles.middle}>
+        <span className={styles.big}>{bookProgress}</span>
+        <span>completed</span>
       </div>
-      <div className="right section">
-        <p className="currentHolder">Current Chapter</p>
-        <p className="currentname">{currentChap}</p>
-        <div className="btnPlacehoder">Update Progress</div>
+      <div className={styles.right}>
+        <p className={styles.currentHolder}>Current Chapter:</p>
+        <p className={styles.currentname}>{currentChap}</p>
+        <button type="button" className={styles.btnPlacehoder}>Update Progress</button>
       </div>
     </div>
   );

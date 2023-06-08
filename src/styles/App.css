@@ -10,10 +10,10 @@ body {
   line-height: 1.4;
   color: #000;
   background-color: floralwhite;
-  height: 100vh;
   font-weight: 400;
   justify-content: center;
   align-items: center;
+  padding: 5vh 5vw;
 }
 
 ul,
@@ -23,13 +23,17 @@ li {
 
 .App {
   display: grid;
+  grid-template-columns: auto;
   grid-template-rows: auto 1fr;
   gap: 10px;
-  width: 90vw;
+  max-width: 90vw;
   min-height: 90vh;
   justify-content: center;
   align-items: center;
   background-color: azure;
+  border: solid 1px gray;
+  border-radius: 25px;
+  padding: 5vh 5vw;
 }
 
 .navbar {
@@ -55,7 +59,7 @@ li {
   width: 90vw;
   padding: 2%;
   background-color: white;
-  border-bottom: solid 1px gray;
+  border: solid 1px gray;
 }
 
 .top {
@@ -70,7 +74,6 @@ li {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 100%;
   gap: 10px;
 }
 

@@ -1,0 +1,115 @@
+.bookItem {
+  background-color: white;
+  border: solid 1px gray;
+  padding: 45px 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  max-width: 80vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-flow: column;
+  gap: 25px;
+}
+
+.bookCaract {
+  display: flex;
+  flex-flow: column;
+  gap: 7.5px;
+}
+
+.bookCategory {
+  color: gray;
+}
+
+.bookTitle {
+  font-size: 150%;
+}
+
+.bookAuthor {
+  color: darkblue;
+}
+
+.bookInter ul {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  text-align: center;
+}
+
+.navItem {
+  color: blue;
+  cursor: pointer;
+}
+
+.middle {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  border-bottom: solid 1px gray;
+}
+
+.separator {
+  display: none;
+}
+
+.big {
+  font-size: 175%;
+  font-weight: bold;
+}
+
+.right {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.currentHolder {
+  color: lightgray;
+}
+
+.currentname {
+  text-align: center;
+  font-size: 125%;
+}
+
+.btnPlacehoder {
+  padding: 6px 15px;
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  max-width: 150px;
+  cursor: pointer;
+}
+
+@media only  screen and (min-width: 300px) {
+  .bookInter ul {
+    flex-flow: row;
+    gap: 10px;
+  }
+
+  .separator {
+    display: inline-block;
+  }
+}
+
+@media only  screen and (min-width: 700px) {
+  .middle {
+    border-bottom: none;
+    border-right: solid 1px gray;
+  }
+
+  .bookItem {
+    padding: 45px 20px;
+    display: grid;
+    column-gap: 20px;
+    justify-content: stretch;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+  }
+}
