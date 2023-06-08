@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useBookLocalStore from 'components/lib/store';
+import styles from 'styles/InputBook.module.css';
 
 const InputBook = () => {
   const addBookItem = useBookLocalStore((state) => state.addBookItem);
@@ -26,28 +27,28 @@ const InputBook = () => {
   };
 
   return (
-    <div className="bookInput">
+    <div className={styles.bookInput}>
       <h3>Add New Book</h3>
-      <form onSubmit={handleSubmit} className="bookForm">
+      <form onSubmit={handleSubmit} className={styles.bookForm}>
         <input
           type="text"
           placeholder="Book Title"
           value={title}
           onChange={handleChangeTitle}
-          className="bookFormInput"
+          className={styles.bookFormInput}
         />
         <input
           type="text"
           placeholder="Book Category"
           value={category}
           onChange={handleChangeCategory}
-          className="bookFormInput"
+          className={styles.bookFormInput}
         />
-        <button type="submit" className="formBtn">
+        <button type="submit" className={styles.formBtn}>
           Add Book
         </button>
       </form>
-      <span className="formWarning">{message}</span>
+      <span className={styles.formWarning}>{message}</span>
     </div>
   );
 };

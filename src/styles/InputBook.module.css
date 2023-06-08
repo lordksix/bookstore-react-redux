@@ -1,0 +1,29 @@
+.bookInput {
+  padding: 10px 30px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.bookForm {
+  display: grid;
+  grid-template-columns: 3fr 1fr auto;
+  column-gap: 10px;
+}
+
+.bookFormInput {
+  padding: 6px 15px;
+  border-radius: 10px;
+}
+
+.formBtn {
+  padding: 6px 15px;
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 10px;
+}
+
+.formWarning {
+  color: red;
+  font-weight: bolder;
+}
