@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.4;
+  color: #000;
+  background-color: floralwhite;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 5vw;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  max-width: 90vw;
+  min-height: 90vh;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+  border: solid 1px gray;
+  border-radius: 25px;
+  padding: 5vh 5vw;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.appHeader {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 20px;
+  width: 90vw;
+  padding: 2%;
+  background-color: white;
+  border: solid 1px gray;
+}
+
+.top {
+  align-self: flex-start;
+}
+
+.active {
+  color: red;
+}
+
+.appBody {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bookItem {
+  width: 90%;
+}
+
+@media only  screen and (min-width: 420px) {
+  .appHeader {
+    flex-flow: row;
+    justify-content: flex-start;
+  }
+}

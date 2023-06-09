@@ -1,0 +1,9 @@
+{
+  "short_name": "Bookstore App",
+  "name": "Bookstore React Redux App Template",
+  "start_url": "./",
+  "scope": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
