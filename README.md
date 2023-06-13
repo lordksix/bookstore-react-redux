@@ -60,6 +60,8 @@
 - **Implemente 2 SPA using React router**
 - **Implement zustand**
 - **Implement Redux Toolkit**
+- **Implement Add new book**
+- **Implement Add remove book**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -180,7 +182,6 @@ Go to [🚀 Live Demo](https://bookstore-react-redux-kappa.vercel.app/) to check
 
 Future changes:
 - Implement API
-- Connect React and RTL
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
