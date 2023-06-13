@@ -9,13 +9,12 @@ const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    checkStatus: (state) => ({ ...state, categories: 'Under construction' }),
-    selectCat: (state, action) => [action.payload],
-    deselectCat: (state) => [...state.categories],
+    selectCat: (state, action) => ({ ...state, currentCategories: [action.payload] }),
+    deselectCat: (state) => ({ ...state, currentCategories: [...state.categories] }),
   },
 });
 
-export const { chekStatus } = categoriesSlice.actions;
+export const { selectCat, deselectCat } = categoriesSlice.actions;
 
 export const selectCategories = (state) => state.categories.categories;
 export const selectCurrentCategories = (state) => state.categories.currentCategories;

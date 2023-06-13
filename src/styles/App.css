@@ -71,8 +71,8 @@ li {
 }
 
 .appBody {
-  display: flex;
-  flex-flow: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   justify-content: center;
   gap: 10px;
 }

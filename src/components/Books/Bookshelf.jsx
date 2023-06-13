@@ -1,4 +1,4 @@
-import styles from 'styles/Bookshelf.module.css';
+import styles from 'styles/Books/Bookshelf.module.css';
 import { useSelector } from 'react-redux';
 import { selectBooks } from 'redux/books/bookSlice';
 import { v4 as uuidv4 } from 'uuid';

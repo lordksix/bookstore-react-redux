@@ -1,10 +1,10 @@
 import CatHeader from 'components/Categories/CatHeader';
-import CategoryBody from 'components/Categories/CategoryBody';
+/* import CategoryBody from 'components/Categories/CategoryBody'; */
 
 const CategoriesApp = () => (
   <>
     <CatHeader />
-    <CategoryBody />
+    {/* <CategoryBody /> */}
   </>
 );
 
