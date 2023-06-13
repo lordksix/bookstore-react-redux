@@ -1,20 +1,29 @@
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
+import { removeBook } from 'redux/books/bookSlice';
+import { useDispatch } from 'react-redux';
 import styles from 'styles/BookItem.module.css';
 
 const BookItem = (props) => {
+  const dispatch = useDispatch();
+
   const {
     category,
     title,
     author,
     finishedChap,
     totalChap,
+    idElem,
   } = props;
+
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook(id));
+  };
 
   const bookProgress = `${Math.round((finishedChap / totalChap) * 100)}%`;
   const currentChap = `${finishedChap < totalChap ? finishedChap : 'Finished'} `;
   return (
-    <div className={styles.bookItem}>
+    <div className={styles.bookItem} id={idElem}>
       <div className={styles.left}>
         <div className={styles.bookCaract}>
           <span className={styles.bookCategory}>{category}</span>
@@ -27,7 +36,11 @@ const BookItem = (props) => {
           <ul>
             <li key={uuidv4()} className={styles.navItem}>Comments</li>
             <li key={uuidv4()} className={styles.separator}>|</li>
-            <li key={uuidv4()} className={styles.navItem}>Remove</li>
+            <li key={uuidv4()} className={styles.navItem}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+                Remove
+              </button>
+            </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
             <li key={uuidv4()} className={styles.navItem}>Edit</li>
           </ul>
@@ -52,6 +65,7 @@ BookItem.propTypes = {
   author: PropTypes.string.isRequired,
   finishedChap: PropTypes.number.isRequired,
   totalChap: PropTypes.number.isRequired,
+  idElem: PropTypes.string.isRequired,
 };
 
 export default BookItem;

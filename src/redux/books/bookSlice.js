@@ -34,7 +34,7 @@ const booksSlice = createSlice({
   reducers: {
     addBook: (state, action) => {
       const newBook = {
-        id: uuidv4(),
+        item_id: uuidv4(),
         title: action.payload.title,
         author: action.payload.author,
         category: 'Non Classified',
@@ -45,7 +45,7 @@ const booksSlice = createSlice({
     },
     removeBook: (state, action) => {
       state.books = [
-        ...state.books.filter((book) => book.id !== action.payload.id),
+        ...state.books.filter((book) => book.item_id !== action.payload),
       ];
     },
   },
