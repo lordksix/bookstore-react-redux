@@ -23,7 +23,7 @@ const BookItem = (props) => {
   const bookProgress = `${Math.round((finishedChap / totalChap) * 100)}%`;
   const currentChap = `${finishedChap < totalChap ? finishedChap : 'Finished'} `;
   return (
-    <div className={styles.bookItem} id={idElem}>
+    <div className={styles.bookItem}>
       <div className={styles.left}>
         <div className={styles.bookCaract}>
           <span className={styles.bookCategory}>{category}</span>
@@ -34,15 +34,23 @@ const BookItem = (props) => {
         </div>
         <nav className={styles.bookInter}>
           <ul>
-            <li key={uuidv4()} className={styles.navItem}>Comments</li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+                Comments
+              </button>
+            </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
-            <li key={uuidv4()} className={styles.navItem}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)}>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
                 Remove
               </button>
             </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
-            <li key={uuidv4()} className={styles.navItem}>Edit</li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+                Edit
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
