@@ -5,7 +5,7 @@ import styles from 'styles/BookItem.module.css';
 const BookItem = (props) => {
   const {
     category,
-    name,
+    title,
     author,
     finishedChap,
     totalChap,
@@ -19,7 +19,7 @@ const BookItem = (props) => {
         <div className={styles.bookCaract}>
           <span className={styles.bookCategory}>{category}</span>
           <div className="bookInfo">
-            <h3 className={styles.bookTitle}>{name}</h3>
+            <h3 className={styles.bookTitle}>{title}</h3>
             <span className={styles.bookAuthor}>{author}</span>
           </div>
         </div>
@@ -48,7 +48,7 @@ const BookItem = (props) => {
 
 BookItem.propTypes = {
   category: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   finishedChap: PropTypes.number.isRequired,
   totalChap: PropTypes.number.isRequired,

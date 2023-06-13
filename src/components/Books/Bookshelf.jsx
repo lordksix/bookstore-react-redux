@@ -1,43 +1,32 @@
-import { v4 as uuidv4 } from 'uuid';
 import styles from 'styles/Bookshelf.module.css';
+import store from 'redux/store';
 import BookItem from './BookItem';
 
-const bookAr = [
+const bookStatus = [
   {
-    category: 'Action',
-    name: 'The Hunger Games',
-    author: 'Suzanne Collins',
     finishedChap: 16,
     totalChap: 24,
-    id: uuidv4(),
   },
   {
-    category: 'Science Fiction',
-    name: 'Dune',
-    author: 'Frank Herbert',
     finishedChap: 2,
     totalChap: 25,
-    id: uuidv4(),
   },
   {
-    category: 'Economy',
-    name: 'Capital in the Twenty-First Centry',
-    author: 'Suzanne Collins',
     finishedChap: 0,
     totalChap: 24,
-    id: uuidv4(),
   },
 ];
 
 const Bookshelf = () => {
-  const books = bookAr.map((book) => (
+  const booksStore = store.getState().books.books;
+  const books = booksStore.map((book, i) => (
     <BookItem
       key={book.id}
       category={book.category}
-      name={book.name}
+      title={book.title}
       author={book.author}
-      finishedChap={book.finishedChap}
-      totalChap={book.totalChap}
+      finishedChap={bookStatus[i].finishedChap}
+      totalChap={bookStatus[i].totalChap}
     />
   ));
 
