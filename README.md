@@ -64,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-You can find a live demo in [HERE](bookstore-react-redux-kappa.vercel.app).
+You can find a live demo in [HERE](https://bookstore-react-redux-kappa.vercel.app/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -173,7 +173,7 @@ Go to [🚀 Live Demo](#live-demo) to check it out.
 👤 **Author**
 
 - GitHub: [@lordksix](https://github.com/lordksix)
-- Twitter: [@wapasquel](https://github.com/lordksix)
+- Twitter: [@wapasquel](https://twitter.com/wapasquel)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
