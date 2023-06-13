@@ -15,7 +15,6 @@ const Bookshelf = () => {
       totalChap={book.totalChap}
     />
   ));
-  console.log(booksStore);
   return (
     <div className={styles.bookshelf}>
       {books}
