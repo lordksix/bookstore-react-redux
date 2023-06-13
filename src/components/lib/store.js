@@ -11,10 +11,10 @@ const bookLocalStore = (set) => ({
       category,
     };
     set((state) => ({
-      todos: [...state.books, newBook],
+      books: [...state.books, newBook],
     }));
   },
-  delTodo: (id) => {
+  delBook: (id) => {
     set((state) => ({
       books: state.books.filter((book) => book.id !== id),
     }));

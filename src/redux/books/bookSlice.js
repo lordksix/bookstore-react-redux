@@ -7,18 +7,24 @@ const initialState = {
     title: 'The Great Gatsby',
     author: 'John Smith',
     category: 'Fiction',
+    finishedChap: 16,
+    totalChap: 24,
   },
   {
     item_id: uuidv4(),
     title: 'Anna Karenina',
     author: 'Leo Tolstoy',
     category: 'Fiction',
+    finishedChap: 2,
+    totalChap: 25,
   },
   {
     item_id: uuidv4(),
     title: 'The Selfish Gene',
     author: 'Richard Dawkins',
     category: 'Nonfiction',
+    finishedChap: 0,
+    totalChap: 24,
   }],
 };
 
@@ -29,15 +35,17 @@ const booksSlice = createSlice({
     addBook: (state, action) => {
       const newBook = {
         id: uuidv4(),
-        title: action.playload.title,
-        author: action.playload.author,
-        category: action.playload.category,
+        title: action.payload.title,
+        author: action.payload.author,
+        category: 'Non Classified',
+        finishedChap: 0,
+        totalChap: 24,
       };
       state.books = [...state.books, newBook];
     },
     removeBook: (state, action) => {
       state.books = [
-        ...state.books.filter((book) => book.id !== action.playload.id),
+        ...state.books.filter((book) => book.id !== action.payload.id),
       ];
     },
   },
