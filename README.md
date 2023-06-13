@@ -58,7 +58,8 @@
 - **Setup React App**
 - **Implement basic styling**
 - **Implemente 2 SPA using React router**
-- **implement zustand**
+- **Implement zustand**
+- **Implement Redux Toolkit**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -179,7 +180,8 @@ Go to [🚀 Live Demo](#live-demo) to check it out.
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- TBA
+- Implement API
+- Connect React and RTL
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
