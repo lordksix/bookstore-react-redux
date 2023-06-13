@@ -1,5 +1,6 @@
 import styles from 'styles/Bookshelf.module.css';
-import store from 'redux/store';
+import { useSelector } from 'react-redux';
+import { selectBooks } from 'redux/books/bookSlice';
 import BookItem from './BookItem';
 
 const bookStatus = [
@@ -18,7 +19,7 @@ const bookStatus = [
 ];
 
 const Bookshelf = () => {
-  const booksStore = store.getState().books.books;
+  const booksStore = useSelector(selectBooks);
   const books = booksStore.map((book, i) => (
     <BookItem
       key={book.id}
