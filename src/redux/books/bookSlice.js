@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { deselectCat, selectCat } from 'redux/categories/categoriesSlice';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
@@ -71,7 +72,18 @@ const booksSlice = createSlice({
       { ...state, books: [...state.books.filter((book) => book.item_id !== action.payload)] }
     ),
   },
-  extraReducers: {
+  extraReducers: (builder) => {
+    builder
+      .addCase(selectCat, (state, action) => ({
+        ...state,
+        filteredBooks: [...state.books.filter((book) => book.category === action.payload)],
+      }))
+      .addCase(deselectCat, (state) => ({
+        ...state,
+        filteredBooks: [...state.books],
+      }));
+  },
+/*   extraReducers: {
     'categories/selectCat': (state, action) => ({
       ...state,
       filteredBooks: [...state.books.filter((book) => book.category === action.payload)],
@@ -80,7 +92,7 @@ const booksSlice = createSlice({
       ...state,
       filteredBooks: [...state.books],
     }),
-  }
+  } */
 });
 
 export const {
