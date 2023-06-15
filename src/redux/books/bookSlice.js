@@ -48,13 +48,13 @@ const booksSlice = createSlice({
         state.books.push(action.payload);
         state.filteredBooks.push(action.payload);
       },
-      prepare(title, author) {
+      prepare(title, author, category) {
         return {
           payload: {
             item_id: uuidv4(),
             title,
             author,
-            category: 'Non Classified',
+            category,
             finishedChap: 0,
             totalChap: 24,
           },
