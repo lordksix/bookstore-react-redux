@@ -1,15 +1,24 @@
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
-import styles from 'styles/BookItem.module.css';
+import { removeBook } from 'redux/books/bookSlice';
+import { useDispatch } from 'react-redux';
+import styles from 'styles/Books/BookItem.module.css';
 
 const BookItem = (props) => {
+  const dispatch = useDispatch();
+
   const {
     category,
-    name,
+    title,
     author,
     finishedChap,
     totalChap,
+    idElem,
   } = props;
+
+  const handleRemoveBook = (id) => {
+    dispatch(removeBook(id));
+  };
 
   const bookProgress = `${Math.round((finishedChap / totalChap) * 100)}%`;
   const currentChap = `${finishedChap < totalChap ? finishedChap : 'Finished'} `;
@@ -19,17 +28,29 @@ const BookItem = (props) => {
         <div className={styles.bookCaract}>
           <span className={styles.bookCategory}>{category}</span>
           <div className="bookInfo">
-            <h3 className={styles.bookTitle}>{name}</h3>
+            <h3 className={styles.bookTitle}>{title}</h3>
             <span className={styles.bookAuthor}>{author}</span>
           </div>
         </div>
         <nav className={styles.bookInter}>
           <ul>
-            <li key={uuidv4()} className={styles.navItem}>Comments</li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+                Comments
+              </button>
+            </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
-            <li key={uuidv4()} className={styles.navItem}>Remove</li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+                Remove
+              </button>
+            </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
-            <li key={uuidv4()} className={styles.navItem}>Edit</li>
+            <li key={uuidv4()}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+                Edit
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -48,10 +69,11 @@ const BookItem = (props) => {
 
 BookItem.propTypes = {
   category: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   finishedChap: PropTypes.number.isRequired,
   totalChap: PropTypes.number.isRequired,
+  idElem: PropTypes.string.isRequired,
 };
 
 export default BookItem;

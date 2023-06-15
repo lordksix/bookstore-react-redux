@@ -1,25 +1,26 @@
 import { useState } from 'react';
-import useBookLocalStore from 'components/lib/store';
-import styles from 'styles/InputBook.module.css';
+import styles from 'styles/Books/InputBook.module.css';
+import { useDispatch } from 'react-redux';
+import { addBook } from 'redux/books/bookSlice';
 
 const InputBook = () => {
-  const addBookItem = useBookLocalStore((state) => state.addBookItem);
+  const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [author, setAuthor] = useState('');
   const [message, setMessage] = useState('');
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
   };
   const handleChangeCategory = (e) => {
-    setCategory(e.target.value);
+    setAuthor(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() && category.trim()) {
-      addBookItem(title, category);
+    if (title.trim() && author.trim()) {
+      dispatch(addBook({ title, author }));
       setTitle('');
-      setCategory('');
+      setAuthor('');
       setMessage('');
     } else {
       setMessage('Please input title and category');
@@ -39,12 +40,12 @@ const InputBook = () => {
         />
         <input
           type="text"
-          placeholder="Book Category"
-          value={category}
+          placeholder="Book Author"
+          value={author}
           onChange={handleChangeCategory}
           className={styles.bookFormInput}
         />
-        <button type="submit" className={styles.formBtn}>
+        <button type="submit" aria-label="Add Book" className={styles.formBtn}>
           Add Book
         </button>
       </form>

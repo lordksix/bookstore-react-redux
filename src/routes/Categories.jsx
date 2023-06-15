@@ -1,6 +1,8 @@
+import CategoriesApp from 'components/Categories/CategoriesApp';
+
 const Categories = () => (
-  <div>
-    <h2>Here goes Categories</h2>
+  <div className="appBody">
+    <CategoriesApp />
   </div>
 );
 
