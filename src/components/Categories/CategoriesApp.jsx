@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid';
 import styles from 'styles/Categories/CategoriesApp.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilteredBooks, filterBooks, unfilterBooks } from 'redux/books/bookSlice';
+import { selectFilteredBooks } from 'redux/books/bookSlice';
 import {
-  selectCategories,
+  selectCategories, selectCat, deselectCat,
 } from 'redux/categories/categoriesSlice';
 import CategoryBody from './CategoryBody';
 
@@ -14,10 +14,10 @@ const CategoriesApp = () => {
 
   const handleSelect = (e) => {
     const id = e.target.textContent;
-    dispatch(filterBooks(id));
+    dispatch(selectCat(id));
   };
   const handleDeselect = () => {
-    dispatch(unfilterBooks());
+    dispatch(deselectCat());
   };
   const deselectOption = (
     <li key={uuidv4()}>
