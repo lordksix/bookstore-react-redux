@@ -62,6 +62,27 @@ const initialState = {
 export const getBooks = createAsyncThunk('books/getBooks', async (thunkAPI) => {
   try {
     const response = await axios.get(GETBOOKS);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ error: error.message });
+  }
+});
+
+export const postBooks = createAsyncThunk('books/postBooks', async (bookInfo, thunkAPI) => {
+  try {
+    const response = await axios.post(GETBOOKS, bookInfo);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ error: error.message });
+  }
+});
+
+export const deleteBooks = createAsyncThunk('books/deleteBooks', async (bookID, thunkAPI) => {
+  try {
+    const response = await axios.post(`${GETBOOKS}/${bookID}`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue({ error: error.message });
@@ -100,13 +121,59 @@ const booksSlice = createSlice({
       .addCase(getBooks.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getBooks.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.users = action.payload;
-      })
       .addCase(getBooks.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload.error;
+      })
+      .addCase(postBooks.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload.error;
+      })
+      .addCase(deleteBooks.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload.error;
+      })
+      .addCase(getBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const booksAPI = Object.keys(action.payload).map((key) => {
+          const book = action.payload[key][0];
+          return {
+            item_id: key,
+            category: 'Non Classified',
+            finishedChap: 0,
+            totalChap: 24,
+            ...book,
+          };
+        });
+        return {
+          ...state,
+          booksAPI,
+        };
+      })
+      .addCase(postBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const newBook = {
+          id: action.meta.arg.item_id,
+          title: action.meta.arg.title,
+          author: action.meta.arg.author,
+          category: 'Non Classified',
+          finishedChap: 0,
+          totalChap: 24,
+        };
+        return ({ ...state, booksAPI: [...state.books, newBook] });
+      })
+      .addCase(deleteBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        return {
+          ...state,
+          booksAPI: [...state.booksAPI.filter((book) => book.item_id !== action.meta.arg)],
+        };
       });
   },
 });
