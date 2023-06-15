@@ -66,7 +66,7 @@ const InputBook = () => {
         />
         <label htmlFor="catForm">
           Category:
-          <select id="catForm" value={category} onChange={handleChangeCategory}>
+          <select id="catForm" value={category} onChange={handleChangeCategory} className={styles.bookFormInput}>
             {catOptions}
           </select>
         </label>
