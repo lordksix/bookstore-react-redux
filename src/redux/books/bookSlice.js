@@ -1,6 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { deselectCat, selectCat } from 'redux/categories/categoriesSlice';
 import { v4 as uuidv4 } from 'uuid';
+
+const GETBOOKS = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/qYH4IkyRgswDCxmNVl7g/books';
 
 const initialState = {
   books: [{
@@ -56,6 +59,15 @@ const initialState = {
   error: undefined,
 };
 
+export const getBooks = createAsyncThunk('books/getBooks', async (thunkAPI) => {
+  try {
+    const response = await axios.get(GETBOOKS);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ error: error.message });
+  }
+});
+
 const booksSlice = createSlice({
   name: 'books',
   initialState,
@@ -84,7 +96,18 @@ const booksSlice = createSlice({
       .addCase(deselectCat, (state) => ({
         ...state,
         filteredBooks: [...state.books],
-      }));
+      }))
+      .addCase(getBooks.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.users = action.payload;
+      })
+      .addCase(getBooks.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload.error;
+      });
   },
 });
 
