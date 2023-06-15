@@ -3,8 +3,8 @@ import InputBook from './InputBook';
 
 const Books = () => (
   <>
-    <Bookshelf />
     <InputBook />
+    <Bookshelf />
   </>
 );
 

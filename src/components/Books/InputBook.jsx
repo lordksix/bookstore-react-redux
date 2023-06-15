@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from 'styles/InputBook.module.css';
+import styles from 'styles/Books/InputBook.module.css';
 import { useDispatch } from 'react-redux';
 import { addBook } from 'redux/books/bookSlice';
 

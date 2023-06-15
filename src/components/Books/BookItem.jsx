@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
 import { removeBook } from 'redux/books/bookSlice';
 import { useDispatch } from 'react-redux';
-import styles from 'styles/BookItem.module.css';
+import styles from 'styles/Books/BookItem.module.css';
 
 const BookItem = (props) => {
   const dispatch = useDispatch();
