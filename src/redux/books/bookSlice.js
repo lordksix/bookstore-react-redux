@@ -70,23 +70,21 @@ const booksSlice = createSlice({
     removeBook: (state, action) => (
       { ...state, books: [...state.books.filter((book) => book.item_id !== action.payload)] }
     ),
-    filterBooks: (state, action) => (
-      {
-        ...state,
-        filteredBooks: [...state.books.filter((book) => book.category === action.payload)],
-      }
-    ),
-    unfilterBooks: (state) => (
-      {
-        ...state,
-        filteredBooks: [...state.books],
-      }
-    ),
   },
+  extraReducers: {
+    'categories/selectCat': (state, action) => ({
+      ...state,
+      filteredBooks: [...state.books.filter((book) => book.category === action.payload)],
+    }),
+    'categories/deselectCat': (state) => ({
+      ...state,
+      filteredBooks: [...state.books],
+    }),
+  }
 });
 
 export const {
-  addBook, removeBook, filterBooks, unfilterBooks,
+  addBook, removeBook,
 } = booksSlice.actions;
 
 export const selectBooks = (state) => state.books.books;
