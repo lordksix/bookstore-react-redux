@@ -16,7 +16,6 @@ const categoriesSlice = createSlice({
 
 export const { selectCat, deselectCat } = categoriesSlice.actions;
 
-export const selectCategories = (state) => state.categories.categories;
-export const selectCurrentCategories = (state) => state.categories.currentCategories;
+export const selectCategories = (state) => state.categories;
 
 export default categoriesSlice.reducer;
