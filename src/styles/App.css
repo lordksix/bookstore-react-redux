@@ -73,7 +73,7 @@ li {
 .appBody {
   display: flex;
   flex-flow: column;
-  grid-auto-rows: max-content;
+  align-items: center;
   gap: 10px;
   height: 100%;
 }
