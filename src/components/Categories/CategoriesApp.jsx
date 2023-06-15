@@ -1,15 +1,15 @@
 import { v4 as uuidv4 } from 'uuid';
 import styles from 'styles/Categories/CategoriesApp.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilteredBooks } from 'redux/books/bookSlice';
+import { selectBooks } from 'redux/books/bookSlice';
 import {
   selectCategories, selectCat, deselectCat,
 } from 'redux/categories/categoriesSlice';
 import CategoryBody from './CategoryBody';
 
 const CategoriesApp = () => {
-  const categories = useSelector(selectCategories);
-  const filteredBooks = useSelector(selectFilteredBooks);
+  const { categories } = useSelector(selectCategories);
+  const { filteredBooks } = useSelector(selectBooks);
   const dispatch = useDispatch();
 
   const handleSelect = (e) => {
