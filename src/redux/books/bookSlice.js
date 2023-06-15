@@ -51,6 +51,9 @@ const initialState = {
     finishedChap: 0,
     totalChap: 24,
   }],
+  booksAPI: [],
+  isLoading: false,
+  error: undefined,
 };
 
 const booksSlice = createSlice({
