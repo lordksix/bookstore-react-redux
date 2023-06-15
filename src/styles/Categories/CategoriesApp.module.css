@@ -1,0 +1,15 @@
+.catHeader {
+  align-self: center;
+}
+
+.catHeader h2 {
+  text-align: center;
+}
+
+.noBtn {
+  color: blue;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 4px 10px;
+}
