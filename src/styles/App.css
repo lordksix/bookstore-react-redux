@@ -71,10 +71,11 @@ li {
 }
 
 .appBody {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  grid-auto-rows: max-content;
   gap: 10px;
+  height: 100%;
 }
 
 .bookItem {
