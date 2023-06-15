@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
-import { removeBook } from 'redux/books/bookSlice';
+import { deleteBooks } from 'redux/books/bookSlice';
 import { useDispatch } from 'react-redux';
 import styles from 'styles/Books/BookItem.module.css';
 
@@ -17,7 +17,7 @@ const BookItem = (props) => {
   } = props;
 
   const handleRemoveBook = (id) => {
-    dispatch(removeBook(id));
+    dispatch(deleteBooks(id));
   };
 
   const bookProgress = `${Math.round((finishedChap / totalChap) * 100)}%`;
