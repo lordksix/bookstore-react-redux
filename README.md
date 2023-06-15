@@ -62,6 +62,9 @@
 - **Implement Redux Toolkit**
 - **Implement Add new book**
 - **Implement Add remove book**
+- **Implement API connectivity**
+- **Implement Categories**
+- **Implement Categories filters**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -181,7 +184,7 @@ Go to [🚀 Live Demo](https://bookstore-react-redux-kappa.vercel.app/) to check
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Implement API
+- Add final styling
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
