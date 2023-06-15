@@ -83,16 +83,6 @@ const booksSlice = createSlice({
         filteredBooks: [...state.books],
       }));
   },
-/*   extraReducers: {
-    'categories/selectCat': (state, action) => ({
-      ...state,
-      filteredBooks: [...state.books.filter((book) => book.category === action.payload)],
-    }),
-    'categories/deselectCat': (state) => ({
-      ...state,
-      filteredBooks: [...state.books],
-    }),
-  } */
 });
 
 export const {
