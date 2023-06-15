@@ -162,7 +162,7 @@ const booksSlice = createSlice({
           id: action.meta.arg.item_id,
           title: action.meta.arg.title,
           author: action.meta.arg.author,
-          category: 'Non Classified',
+          category: action.meta.arg.category,
           finishedChap: 0,
           totalChap: 24,
         };
