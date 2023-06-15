@@ -35,7 +35,7 @@ const BookItem = (props) => {
         <nav className={styles.bookInter}>
           <ul>
             <li key={uuidv4()}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+              <button type="button" className={styles.btnPlacehoder}>
                 Comments
               </button>
             </li>
@@ -47,7 +47,7 @@ const BookItem = (props) => {
             </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
             <li key={uuidv4()}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+              <button type="button" className={styles.btnPlacehoder}>
                 Edit
               </button>
             </li>
