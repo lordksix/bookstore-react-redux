@@ -26,6 +26,30 @@ const initialState = {
     finishedChap: 0,
     totalChap: 24,
   }],
+  filteredBooks: [{
+    item_id: uuidv4(),
+    title: 'The Great Gatsby',
+    author: 'John Smith',
+    category: 'Fiction',
+    finishedChap: 16,
+    totalChap: 24,
+  },
+  {
+    item_id: uuidv4(),
+    title: 'Anna Karenina',
+    author: 'Leo Tolstoy',
+    category: 'Fiction',
+    finishedChap: 2,
+    totalChap: 25,
+  },
+  {
+    item_id: uuidv4(),
+    title: 'The Selfish Gene',
+    author: 'Richard Dawkins',
+    category: 'Nonfiction',
+    finishedChap: 0,
+    totalChap: 24,
+  }],
 };
 
 const booksSlice = createSlice({
@@ -41,18 +65,31 @@ const booksSlice = createSlice({
         finishedChap: 0,
         totalChap: 24,
       };
-      state.books = [...state.books, newBook];
+      return ({ ...state, books: [...state.books, newBook] });
     },
-    removeBook: (state, action) => {
-      state.books = [
-        ...state.books.filter((book) => book.item_id !== action.payload),
-      ];
-    },
+    removeBook: (state, action) => (
+      { ...state, books: [...state.books.filter((book) => book.item_id !== action.payload)] }
+    ),
+    filterBooks: (state, action) => (
+      {
+        ...state,
+        filteredBooks: [...state.books.filter((book) => book.category === action.payload)],
+      }
+    ),
+    unfilterBooks: (state) => (
+      {
+        ...state,
+        filteredBooks: [...state.books],
+      }
+    ),
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+export const {
+  addBook, removeBook, filterBooks, unfilterBooks,
+} = booksSlice.actions;
 
 export const selectBooks = (state) => state.books.books;
+export const selectFilteredBooks = (state) => state.books.filteredBooks;
 
 export default booksSlice.reducer;
