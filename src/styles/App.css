@@ -4,16 +4,24 @@
   padding: 0;
 }
 
+:root {
+  --pale-grey: #f5f6fa;
+  --black-5: rgba(0, 0, 0, 0.05);
+  --white: #fafafa;
+  --white-two: #fff;
+  --azure: #0290ff;
+  --white-three: #e8e8e8;
+  --very-light-pink: #c4c4c4;
+  --medium-blue: #307bbe;
+}
+
 body {
   display: flex;
-  font-family: "Segoe UI", sans-serif;
-  line-height: 1.4;
+  font-family: "Montserrat", "Segoe UI", sans-serif;
   color: #000;
-  background-color: floralwhite;
   font-weight: 400;
   justify-content: center;
   align-items: center;
-  padding: 5vh 5vw;
 }
 
 ul,
@@ -21,19 +29,36 @@ li {
   list-style-type: none;
 }
 
+#root {
+  width: 100vw;
+  min-height: 89.625rem;
+  padding: 9.313rem 3.75vw 7.688rem 6.25vw;
+  background-color: var(--pale-grey);
+}
+
 .App {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto 1fr;
   gap: 10px;
-  max-width: 90vw;
-  min-height: 90vh;
+  width: 87.5vw;
+  min-height: 68.563rem;
+  margin: 0 2.5vw 4.063rem 0;
   justify-content: center;
   align-items: center;
-  background-color: azure;
-  border: solid 1px gray;
-  border-radius: 25px;
-  padding: 5vh 5vw;
+  background-color: var(--white);
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 var(--black-5);
+}
+
+.appTitle {
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--azure);
 }
 
 .navbar {
@@ -43,12 +68,22 @@ li {
 
 .navbar ul {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 2.563rem;
 }
 
 .navbar a {
   text-decoration: none;
+  height: 1rem;
+  margin: 1.125rem 0 0.688rem 0;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  opacity: 0.5;
 }
 
 .appHeader {
@@ -56,18 +91,19 @@ li {
   flex-flow: column;
   align-items: center;
   gap: 20px;
-  width: 90vw;
-  padding: 2%;
-  background-color: white;
-  border: solid 1px gray;
+  width: 87.5vw;
+  height: 10rem;
+  margin: 0 0 2.375rem;
+  padding: 1.438rem 6.188vw 1.688rem 6.25vw;
+  background-color: var(--white-two);
 }
 
 .top {
   align-self: flex-start;
 }
 
-.active {
-  color: red;
+.navbar .active {
+  opacity: 1;
 }
 
 .appBody {
@@ -78,17 +114,18 @@ li {
   height: 100%;
 }
 
-.bookItem {
-  width: 90%;
-}
-
 .center {
   text-align: center;
+}
+
+.navbar .red {
+  color: red;
 }
 
 @media only  screen and (min-width: 420px) {
   .appHeader {
     flex-flow: row;
     justify-content: flex-start;
+    height: 5.938rem;
   }
 }
