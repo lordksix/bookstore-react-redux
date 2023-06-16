@@ -4,7 +4,7 @@ import Navbar from 'components/Navbar';
 const Layout = () => (
   <>
     <header className="appHeader">
-      <h1>Bookstore CMS</h1>
+      <h1 className="appTitle">Bookstore CMS</h1>
       <Navbar />
     </header>
     <Outlet />
