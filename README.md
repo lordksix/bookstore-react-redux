@@ -205,7 +205,7 @@ If you like this project, I encourage you to clone, fork and contribute. Our com
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the template and API for this project.
+I would like to thank Microverse for the API and Usman Suleiman Babakolo for the template for this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
