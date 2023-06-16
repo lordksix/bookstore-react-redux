@@ -8,7 +8,7 @@ import {
 import CategoryBody from './CategoryBody';
 
 const CategoriesApp = () => {
-  const { categories } = useSelector(selectCategories);
+  const { categories, currentCategories } = useSelector(selectCategories);
   const { filteredBooks } = useSelector(selectBooks);
   const dispatch = useDispatch();
 
@@ -19,17 +19,20 @@ const CategoriesApp = () => {
   const handleDeselect = () => {
     dispatch(deselectCat());
   };
+
+  const filterNone = currentCategories.length > 1;
+
   const deselectOption = (
     <li key={uuidv4()}>
       <button type="button" className={styles.noBtn} onClick={() => handleDeselect()}>
-        None
+        <span className={filterNone ? 'red' : ''}>None</span>
       </button>
     </li>
   );
   const catHeaders = categories.map((cat) => (
     <li key={uuidv4()}>
       <button type="button" className={styles.noBtn} onClick={(e) => handleSelect(e)}>
-        {cat}
+        <span className={!filterNone && currentCategories[0] === cat ? 'red' : ''}>{cat}</span>
       </button>
     </li>
   ));
