@@ -110,15 +110,6 @@
   padding: 0.62rem 0.625rem 0.75rem 0.75rem;
 }
 
-.oval {
-  width: 4.25rem;
-  height: 4.25rem;
-  border-style: solid;
-  border-width: 5px;
-  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
-  border-image-slice: 1;
-}
-
 .big {
   font-size: 2rem;
 }
@@ -158,6 +149,8 @@
 }
 
 .btnPlacehoder {
+  max-width: 11.5rem;
+  height: 2.063rem;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
   background-color: var(--azure);
@@ -171,6 +164,7 @@
   letter-spacing: 0.5px;
   text-align: center;
   color: var(--white-two);
+  border: none;
 }
 
 @media only  screen and (min-width: 300px) {
