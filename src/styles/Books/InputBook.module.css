@@ -18,7 +18,8 @@
   color: #888;
 }
 
-.bookForm {
+.bookForm,
+.bookForm2 {
   display: flex;
   flex-flow: column;
   gap: 10px;
@@ -63,7 +64,6 @@
 @media only  screen and (min-width: 300px) {
   .bookFormInput {
     width: auto;
-    max-width: 500px;
   }
 }
 
@@ -71,7 +71,15 @@
   .bookForm {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr auto;
-    column-gap: 2.125vw;
+    column-gap: 2.125rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .bookForm2 {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr auto;
+    column-gap: 2.125rem;
     justify-content: space-around;
     align-items: center;
   }

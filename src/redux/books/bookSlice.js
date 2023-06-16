@@ -12,6 +12,8 @@ const initialState = {
   error: undefined,
 };
 
+export const CATEGORIES = ['Fiction', 'Nonfiction', 'Non Classified', 'Romance'];
+
 export const getBooks = createAsyncThunk('books/getBooks', async (thunkAPI) => {
   try {
     const response = await axios.get(GETBOOKS);
