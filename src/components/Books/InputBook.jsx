@@ -48,7 +48,7 @@ const InputBook = () => {
 
   return (
     <div className={styles.bookInput}>
-      <h3 className={styles.subtitle}>Add New Book</h3>
+      <h3 className={styles.subtitle}>ADD NEW BOOK</h3>
       <form onSubmit={handleSubmit} className={styles.bookForm}>
         <input
           type="text"
