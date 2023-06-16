@@ -55,7 +55,7 @@ const booksSlice = createSlice({
             title,
             author,
             category,
-            finishedChap: 0,
+            finishedChap: Math.floor(Math.random() * 25),
             totalChap: 24,
           },
         };
@@ -111,7 +111,7 @@ const booksSlice = createSlice({
           const book = action.payload[key][0];
           return {
             item_id: key,
-            finishedChap: 0,
+            finishedChap: Math.floor(Math.random() * 25),
             totalChap: 24,
             ...book,
           };
@@ -129,7 +129,7 @@ const booksSlice = createSlice({
           title: action.meta.arg.title,
           author: action.meta.arg.author,
           category: action.meta.arg.category,
-          finishedChap: 0,
+          finishedChap: Math.floor(Math.random() * 25),
           totalChap: 24,
         };
         return {
