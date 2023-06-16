@@ -65,6 +65,7 @@
 - **Implement API connectivity**
 - **Implement Categories**
 - **Implement Categories filters**
+- **Improve styling**
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
@@ -184,7 +185,7 @@ Go to [🚀 Live Demo](https://bookstore-react-redux-kappa.vercel.app/) to check
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Add final styling
+- Add Comment and Edit Interactivity
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
