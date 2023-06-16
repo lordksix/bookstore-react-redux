@@ -11,7 +11,7 @@ const InputBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [message, setMessage] = useState('');
-  const [category, setCategory] = useState('Fiction');
+  const [category, setCategory] = useState('Category');
 
   const handleChangeTitle = (e) => {
     setTitle(e.target.value);
@@ -24,7 +24,7 @@ const InputBook = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim() && author.trim() && category.trim()) {
+    if (title.trim() && author.trim() && category !== 'Category') {
       const bookInfo = {
         item_id: uuidv4(),
         title,
@@ -34,7 +34,7 @@ const InputBook = () => {
       dispatch(postBooks(bookInfo));
       setTitle('');
       setAuthor('');
-      setCategory('Fiction');
+      setCategory('Category');
       setMessage('');
     } else {
       setMessage('Please input title and category');
@@ -48,7 +48,7 @@ const InputBook = () => {
 
   return (
     <div className={styles.bookInput}>
-      <h3>Add New Book</h3>
+      <h3 className={styles.subtitle}>Add New Book</h3>
       <form onSubmit={handleSubmit} className={styles.bookForm}>
         <input
           type="text"
@@ -64,13 +64,12 @@ const InputBook = () => {
           onChange={handleChangeAuthor}
           className={styles.bookFormInput}
         />
-        <label htmlFor="catForm">
-          Category:
-          <select id="catForm" value={category} onChange={handleChangeCategory} className={styles.bookFormInput}>
-            {catOptions}
-          </select>
-        </label>
-
+        <select id="catForm" value={category} onChange={handleChangeCategory} className={styles.bookFormInput}>
+          <option value="Category" className={styles.defaultSelector}>
+            Select Category
+          </option>
+          {catOptions}
+        </select>
         <button type="submit" aria-label="Add Book" className={styles.formBtn}>
           Add Book
         </button>
