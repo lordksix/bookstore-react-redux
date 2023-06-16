@@ -58,7 +58,7 @@ const BookItem = (props) => {
       </div>
       <div className={styles.middle}>
         <div className={styles.rectangule}>
-          <CircularProgressbar value={bookProgress} text={`${bookProgress}%`} />
+          <CircularProgressbar value={bookProgress} />
         </div>
         <div className={styles.middle_right}>
           <span className={styles.big}>{`${bookProgress}%`}</span>
@@ -66,9 +66,9 @@ const BookItem = (props) => {
         </div>
       </div>
       <div className={styles.right}>
-        <p className={styles.currentHolder}>Current Chapter:</p>
+        <p className={styles.currentHolder}>CURRENT CHAPTER:</p>
         <p className={styles.currentname}>{currentChap}</p>
-        <button type="button" className={styles.btnPlacehoder}>Update Progress</button>
+        <button type="button" className={styles.btnPlacehoder}>UPDATE PROGRESS</button>
       </div>
     </div>
   );
