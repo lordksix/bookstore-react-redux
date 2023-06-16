@@ -1,6 +1,6 @@
 .bookshelf {
   display: flex;
   flex-flow: column;
-  gap: 30px;
-  padding: 20px 5vw;
+  gap: 0.938rem;
+  padding: 2.5rem 6.25vw;
 }
