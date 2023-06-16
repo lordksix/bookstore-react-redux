@@ -71,7 +71,7 @@ const InputBook = () => {
           {catOptions}
         </select>
         <button type="submit" aria-label="Add Book" className={styles.formBtn}>
-          Add Book
+          ADD BOOK
         </button>
       </form>
       <span className={styles.formWarning}>{message}</span>
