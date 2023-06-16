@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import PropTypes from 'prop-types';
 import { deleteBooks } from 'redux/books/bookSlice';
 import { useDispatch } from 'react-redux';
@@ -20,7 +21,7 @@ const BookItem = (props) => {
     dispatch(deleteBooks(id));
   };
 
-  const bookProgress = `${Math.round((finishedChap / totalChap) * 100)}%`;
+  const bookProgress = Math.round((finishedChap / totalChap) * 100);
   const currentChap = `${finishedChap < totalChap ? finishedChap : 'Finished'} `;
   return (
     <div className={styles.bookItem}>
@@ -56,10 +57,10 @@ const BookItem = (props) => {
       </div>
       <div className={styles.middle}>
         <div className={styles.rectangule}>
-          <div className={styles.oval} />
+          <CircularProgressbar value={bookProgress} text={`${bookProgress}%`} />
         </div>
         <div className={styles.middle_right}>
-          <span className={styles.big}>{bookProgress}</span>
+          <span className={styles.big}>{`${bookProgress}%`}</span>
           <span className={styles.light}>completed</span>
         </div>
       </div>
