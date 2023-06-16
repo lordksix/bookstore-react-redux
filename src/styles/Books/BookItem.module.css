@@ -36,7 +36,7 @@
 }
 
 .bookTitle {
-  font-family: "RobotoSlab", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 1.375rem;
   font-weight: bold;
   font-stretch: normal;
@@ -47,7 +47,7 @@
 }
 
 .bookAuthor {
-  font-family: "RobotoSlab", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -66,7 +66,7 @@
 
 .btnEvent {
   cursor: pointer;
-  font-family: "RobotoSlab", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 0.875rem;
   font-weight: 300;
   font-stretch: normal;
@@ -126,7 +126,7 @@
 
 .currentHolder {
   opacity: 0.5;
-  font-family: "RobotoSlab", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 0.813rem;
   font-weight: 300;
   font-stretch: normal;
@@ -138,7 +138,7 @@
 
 .currentname {
   margin-bottom: 1rem;
-  font-family: "RobotoSlab", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 1rem;
   font-weight: 300;
   font-stretch: normal;
@@ -155,7 +155,7 @@
   border-radius: 3px;
   background-color: var(--azure);
   cursor: pointer;
-  font-family: "RobotoSlab", sans-serif;
+  font-family: "Roboto Slab", serif;
   font-size: 0.813rem;
   font-weight: 300;
   font-stretch: normal;
@@ -181,6 +181,7 @@
   .middle {
     border-bottom: none;
     border-right: solid 1px var(--white-three);
+    align-items: center;
   }
 
   .bookItem {

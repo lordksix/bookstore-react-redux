@@ -11,7 +11,7 @@
 
 body {
   display: flex;
-  font-family: var(--font-mont);
+  font-family: "Montserrat", sans-serif;
   color: #000;
   font-weight: 400;
   justify-content: center;
