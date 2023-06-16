@@ -35,19 +35,19 @@ const BookItem = (props) => {
         <nav className={styles.bookInter}>
           <ul>
             <li key={uuidv4()}>
-              <button type="button" className={styles.btnPlacehoder}>
+              <button type="button" className={styles.btnEvent}>
                 Comments
               </button>
             </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
             <li key={uuidv4()}>
-              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnPlacehoder}>
+              <button type="button" onClick={() => handleRemoveBook(idElem)} className={styles.btnEvent}>
                 Remove
               </button>
             </li>
             <li key={uuidv4()} className={styles.separator}>|</li>
             <li key={uuidv4()}>
-              <button type="button" className={styles.btnPlacehoder}>
+              <button type="button" className={styles.btnEvent}>
                 Edit
               </button>
             </li>
@@ -55,8 +55,13 @@ const BookItem = (props) => {
         </nav>
       </div>
       <div className={styles.middle}>
-        <span className={styles.big}>{bookProgress}</span>
-        <span>completed</span>
+        <div className={styles.rectangule}>
+          <div className={styles.oval} />
+        </div>
+        <div className={styles.middle_right}>
+          <span className={styles.big}>{bookProgress}</span>
+          <span className={styles.light}>completed</span>
+        </div>
       </div>
       <div className={styles.right}>
         <p className={styles.currentHolder}>Current Chapter:</p>
