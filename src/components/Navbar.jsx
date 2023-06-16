@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { MdPerson } from 'react-icons/md';
 
 const links = [
   { path: '/', text: 'Books' },
@@ -22,6 +23,9 @@ const Navbar = () => (
         </React.Fragment>
       ))}
     </ul>
+    <div className="oval">
+      <MdPerson className="profile" />
+    </div>
   </nav>
 );
 
