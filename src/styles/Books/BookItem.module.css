@@ -80,6 +80,8 @@
 
 .middle {
   display: flex;
+  flex-flow: column;
+  align-items: center;
   gap: 5px;
   border-bottom: solid 1px var(--white-three);
   padding-right: 5.75vw;
@@ -150,7 +152,7 @@
 
 .btnPlacehoder {
   max-width: 11.5rem;
-  height: 2.063rem;
+  min-height: 2.063rem;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
   background-color: var(--azure);
@@ -175,9 +177,21 @@
   .separator {
     display: inline-block;
   }
+
+  .middle {
+    flex-flow: row;
+  }
 }
 
 @media only  screen and (min-width: 700px) {
+  .bookInter ul {
+    flex-flow: column;
+  }
+
+  .separator {
+    display: none;
+  }
+
   .middle {
     border-bottom: none;
     border-right: solid 1px var(--white-three);
@@ -190,5 +204,15 @@
     column-gap: 3.68vw;
     justify-content: stretch;
     grid-template-columns: 1.5fr 1fr 1.5fr;
+  }
+}
+
+@media only  screen and (min-width: 830px) {
+  .bookInter ul {
+    flex-flow: row;
+  }
+
+  .separator {
+    display: inline-block;
   }
 }
