@@ -1,12 +1,12 @@
 .bookItem {
-  background-color: white;
-  border: solid 1px gray;
-  padding: 45px 20px;
-  border-radius: 15px;
+  border-radius: 4px;
+  border: solid 1px var(--white-three);
+  background-color: var(--white-two);
+  padding: 2rem 7.438vw 1.625rem 1.688vw;
   display: flex;
   flex-flow: column;
-  gap: 10px;
-  max-width: 80vw;
+  gap: 3.68vw;
+  width: 75vw;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -15,83 +15,167 @@
 .left {
   display: flex;
   flex-flow: column;
-  gap: 25px;
+  gap: 1.313rem;
 }
 
 .bookCaract {
   display: flex;
   flex-flow: column;
-  gap: 7.5px;
+  gap: 0.25rem;
 }
 
 .bookCategory {
-  color: gray;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  opacity: 0.5;
 }
 
 .bookTitle {
-  font-size: 150%;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
 }
 
 .bookAuthor {
-  color: darkblue;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
 }
 
 .bookInter ul {
   display: flex;
   flex-flow: column;
-  gap: 5px;
+  gap: 0.938vw;
   text-align: center;
 }
 
-.navItem {
-  color: blue;
+.btnEvent {
   cursor: pointer;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  border: none;
+  background-color: transparent;
 }
 
 .middle {
   display: flex;
+  gap: 5px;
+  border-bottom: solid 1px var(--white-three);
+  padding-right: 5.75vw;
+}
+
+.middle_right {
+  display: flex;
   flex-flow: column;
   gap: 5px;
-  border-bottom: solid 1px gray;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
 
 .separator {
+  height: 1.5rem;
+  color: var(--white-three);
   display: none;
 }
 
+.rectangule {
+  width: 5.625rem;
+  height: 5.62rem;
+  padding: 0.62rem 0.625rem 0.75rem 0.75rem;
+}
+
+.oval {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 5px;
+  border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
+  border-image-slice: 1;
+}
+
 .big {
-  font-size: 175%;
-  font-weight: bold;
+  font-size: 2rem;
+}
+
+.light {
+  opacity: 0.5;
 }
 
 .right {
   display: flex;
   flex-flow: column;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
 .currentHolder {
-  color: lightgray;
+  opacity: 0.5;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
 
 .currentname {
-  text-align: center;
-  font-size: 125%;
+  margin-bottom: 1rem;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
 }
 
 .btnPlacehoder {
-  padding: 6px 15px;
-  color: white;
-  background-color: dodgerblue;
-  border-radius: 10px;
-  max-width: 150px;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: var(--azure);
   cursor: pointer;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--white-two);
 }
 
 @media only  screen and (min-width: 300px) {
   .bookInter ul {
     flex-flow: row;
-    gap: 10px;
   }
 
   .separator {
@@ -102,13 +186,13 @@
 @media only  screen and (min-width: 700px) {
   .middle {
     border-bottom: none;
-    border-right: solid 1px gray;
+    border-right: solid 1px var(--white-three);
   }
 
   .bookItem {
     padding: 45px 20px;
     display: grid;
-    column-gap: 20px;
+    column-gap: 3.68vw;
     justify-content: stretch;
     grid-template-columns: 1.5fr 1fr 1.5fr;
   }
