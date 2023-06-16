@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { deleteBooks } from 'redux/books/bookSlice';
 import { useDispatch } from 'react-redux';
 import styles from 'styles/Books/BookItem.module.css';
+import 'react-circular-progressbar/dist/styles.css';
 
 const BookItem = (props) => {
   const dispatch = useDispatch();
