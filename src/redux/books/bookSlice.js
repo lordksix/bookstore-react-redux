@@ -104,7 +104,7 @@ const booksSlice = createSlice({
         isLoading: true,
       }))
       .addCase(deleteBooks.rejected, (state, action) => ({
-        state,
+        ...state,
         isLoading: false,
         error: action.payload,
       }))
